@@ -1,7 +1,7 @@
 import oci
 from datetime import datetime, timedelta
 
-# Configuration
+### Configuration
 DAYS_THRESHOLD = 45
 TENANCY_OCID = "<your-tenancy-ocid>"
 TOPIC_OCID = "<your-notification-topic-ocid>"
