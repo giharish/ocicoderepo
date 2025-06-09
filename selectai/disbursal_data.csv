@@ -1,0 +1,201 @@
+branch,loan_type,disbursal_date,disbursal_amount
+Chennai,Consumer Durable,2022-11-09,71937
+Bangalore,2W,2022-07-21,120371
+Delhi,Consumer Durable,2022-02-06,41526
+Delhi,Consumer Durable,2022-06-10,32367
+Bangalore,2W,2022-03-24,114329
+Chennai,2W,2022-06-22,34040
+Chennai,Consumer Durable,2022-02-27,71528
+Kolkata,4W,2022-10-27,67117
+Kolkata,Consumer Durable,2022-11-01,115621
+Mumbai,Consumer Durable,2022-09-15,30307
+Delhi,Consumer Durable,2022-05-22,139760
+Kolkata,Consumer Durable,2022-02-14,15651
+Chennai,2W,2022-05-17,134695
+Bangalore,Consumer Durable,2022-04-19,54260
+Chennai,4W,2022-09-07,11982
+Delhi,2W,2022-06-16,88757
+Chennai,4W,2022-06-17,128440
+Mumbai,4W,2022-07-05,120631
+Delhi,4W,2022-12-17,42901
+Bangalore,4W,2022-06-07,145460
+Mumbai,2W,2022-01-03,22091
+Delhi,2W,2022-10-22,19854
+Bangalore,4W,2022-10-23,124100
+Mumbai,4W,2022-04-25,26869
+Mumbai,2W,2022-11-30,17465
+Delhi,2W,2022-05-30,126095
+Kolkata,2W,2022-05-23,108000
+Mumbai,Consumer Durable,2022-04-07,52937
+Mumbai,Consumer Durable,2022-04-21,106792
+Bangalore,Consumer Durable,2022-05-12,54003
+Chennai,4W,2022-12-08,104297
+Delhi,Consumer Durable,2022-12-27,145915
+Delhi,4W,2022-06-17,44569
+Kolkata,4W,2022-01-06,51199
+Kolkata,Consumer Durable,2022-07-02,86780
+Delhi,4W,2022-02-03,137695
+Kolkata,Consumer Durable,2022-05-17,125293
+Bangalore,Consumer Durable,2022-06-14,96792
+Delhi,2W,2022-05-29,110814
+Kolkata,Consumer Durable,2022-06-10,127088
+Delhi,2W,2022-04-24,84720
+Chennai,Consumer Durable,2022-06-19,23226
+Mumbai,Consumer Durable,2022-04-06,22834
+Delhi,2W,2022-05-22,87617
+Mumbai,2W,2022-12-07,11474
+Kolkata,Consumer Durable,2022-12-13,145569
+Mumbai,4W,2022-11-16,37419
+Delhi,2W,2022-07-17,48176
+Chennai,4W,2022-12-22,29842
+Kolkata,4W,2022-01-28,124115
+Delhi,4W,2022-05-22,31117
+Kolkata,2W,2022-05-09,73723
+Bangalore,4W,2022-05-05,32875
+Mumbai,2W,2022-07-09,135005
+Bangalore,4W,2022-01-09,83596
+Delhi,Consumer Durable,2022-01-30,147333
+Chennai,Consumer Durable,2022-04-01,128654
+Kolkata,2W,2022-08-05,112087
+Mumbai,Consumer Durable,2022-06-29,113669
+Kolkata,Consumer Durable,2022-12-08,26179
+Delhi,4W,2022-10-07,43983
+Kolkata,2W,2022-12-28,144831
+Mumbai,4W,2022-10-10,82668
+Delhi,4W,2022-04-30,75299
+Kolkata,4W,2022-08-11,59891
+Chennai,4W,2022-06-17,131375
+Delhi,4W,2022-01-22,44900
+Delhi,4W,2022-03-28,138579
+Chennai,4W,2022-08-07,60614
+Bangalore,2W,2022-12-22,66651
+Mumbai,Consumer Durable,2022-01-16,44817
+Bangalore,4W,2022-01-25,105113
+Kolkata,4W,2022-08-03,16847
+Chennai,4W,2022-07-16,113175
+Bangalore,4W,2022-09-03,30595
+Delhi,4W,2022-11-21,120247
+Kolkata,4W,2022-08-26,120818
+Kolkata,Consumer Durable,2022-11-06,12387
+Bangalore,Consumer Durable,2022-06-29,13934
+Bangalore,4W,2022-09-24,137931
+Chennai,Consumer Durable,2022-08-20,87750
+Mumbai,2W,2022-10-04,88002
+Bangalore,4W,2022-05-13,97419
+Bangalore,2W,2022-06-29,51606
+Delhi,2W,2022-03-20,138128
+Kolkata,4W,2022-11-06,101131
+Mumbai,Consumer Durable,2022-07-27,106358
+Delhi,2W,2022-12-11,16525
+Chennai,4W,2022-09-07,99693
+Chennai,2W,2022-01-05,65888
+Bangalore,2W,2022-01-20,89574
+Bangalore,2W,2022-12-19,75110
+Chennai,2W,2022-03-25,96581
+Bangalore,Consumer Durable,2022-12-11,64862
+Mumbai,2W,2022-12-30,124086
+Bangalore,2W,2022-10-01,41465
+Kolkata,2W,2022-05-12,66432
+Bangalore,Consumer Durable,2022-12-09,69259
+Delhi,2W,2022-06-29,63668
+Mumbai,2W,2022-01-23,103651
+Delhi,Consumer Durable,2022-03-20,126945
+Delhi,Consumer Durable,2022-12-31,139059
+Kolkata,Consumer Durable,2022-07-09,111045
+Mumbai,2W,2022-12-01,110355
+Mumbai,Consumer Durable,2022-04-02,116703
+Mumbai,Consumer Durable,2022-11-23,134350
+Mumbai,2W,2022-12-01,31692
+Mumbai,Consumer Durable,2022-02-13,28806
+Kolkata,2W,2022-08-15,33750
+Bangalore,4W,2022-06-19,45694
+Delhi,Consumer Durable,2022-11-29,20394
+Mumbai,4W,2022-10-25,108029
+Bangalore,2W,2022-01-30,125687
+Bangalore,Consumer Durable,2022-03-30,23899
+Delhi,2W,2022-02-20,33591
+Kolkata,4W,2022-12-18,139676
+Chennai,2W,2022-01-01,129314
+Chennai,Consumer Durable,2022-03-31,48430
+Bangalore,Consumer Durable,2022-12-12,117409
+Delhi,4W,2022-04-07,17026
+Chennai,2W,2022-09-27,40450
+Bangalore,Consumer Durable,2022-04-18,131401
+Kolkata,4W,2022-03-07,139651
+Chennai,Consumer Durable,2022-06-21,47696
+Bangalore,Consumer Durable,2022-03-19,118650
+Bangalore,2W,2022-03-03,88227
+Mumbai,Consumer Durable,2022-10-11,116193
+Kolkata,2W,2022-06-02,100312
+Mumbai,Consumer Durable,2022-01-07,145966
+Delhi,4W,2022-12-03,77750
+Mumbai,Consumer Durable,2022-07-28,11606
+Mumbai,2W,2022-05-13,100652
+Chennai,2W,2022-09-23,54929
+Bangalore,4W,2022-09-30,101510
+Kolkata,Consumer Durable,2022-04-06,80848
+Mumbai,Consumer Durable,2022-03-08,131359
+Kolkata,4W,2022-05-29,52621
+Mumbai,Consumer Durable,2022-02-17,91456
+Delhi,Consumer Durable,2022-07-02,141906
+Mumbai,2W,2022-03-20,106589
+Chennai,Consumer Durable,2022-12-26,74868
+Bangalore,Consumer Durable,2022-10-22,88624
+Delhi,4W,2022-07-22,11882
+Mumbai,4W,2022-02-09,114750
+Kolkata,2W,2022-09-09,43161
+Delhi,Consumer Durable,2022-05-04,144746
+Delhi,Consumer Durable,2022-03-02,103543
+Mumbai,Consumer Durable,2022-10-08,12186
+Delhi,2W,2022-05-08,17388
+Kolkata,2W,2022-02-18,24376
+Delhi,4W,2022-03-14,33086
+Kolkata,2W,2022-09-18,69190
+Mumbai,Consumer Durable,2022-12-02,57196
+Bangalore,Consumer Durable,2022-09-07,61168
+Delhi,2W,2022-05-24,43369
+Bangalore,Consumer Durable,2022-05-24,128199
+Kolkata,Consumer Durable,2022-05-20,45899
+Delhi,2W,2022-10-15,59650
+Chennai,2W,2022-02-18,25301
+Bangalore,Consumer Durable,2022-09-30,112988
+Delhi,Consumer Durable,2022-10-20,46339
+Bangalore,Consumer Durable,2022-06-23,25333
+Delhi,4W,2022-03-25,56543
+Mumbai,4W,2022-12-21,118221
+Bangalore,4W,2022-12-28,40322
+Chennai,2W,2022-04-29,35754
+Chennai,4W,2022-07-15,62549
+Kolkata,2W,2022-02-22,106992
+Delhi,2W,2022-03-05,136546
+Bangalore,4W,2022-04-29,95154
+Kolkata,4W,2022-01-12,140312
+Bangalore,4W,2022-12-05,10108
+Delhi,Consumer Durable,2022-07-18,46029
+Chennai,4W,2022-12-22,63452
+Mumbai,Consumer Durable,2022-08-31,142952
+Chennai,2W,2022-11-12,66159
+Kolkata,Consumer Durable,2022-07-12,13214
+Mumbai,4W,2022-07-26,32055
+Kolkata,2W,2022-08-28,102685
+Delhi,2W,2022-03-25,54945
+Mumbai,2W,2022-05-09,127848
+Kolkata,Consumer Durable,2022-11-15,89631
+Delhi,4W,2022-04-18,135633
+Chennai,2W,2022-11-27,68464
+Delhi,2W,2022-08-05,76751
+Bangalore,2W,2022-08-25,36940
+Delhi,Consumer Durable,2022-03-27,119330
+Delhi,Consumer Durable,2022-07-19,149113
+Bangalore,4W,2022-07-10,56587
+Kolkata,Consumer Durable,2022-06-12,31777
+Kolkata,2W,2022-04-04,120314
+Delhi,4W,2023-01-01,31036
+Bangalore,2W,2022-06-08,101135
+Bangalore,2W,2022-07-11,79198
+Chennai,Consumer Durable,2022-02-18,143873
+Kolkata,4W,2022-08-26,27145
+Mumbai,Consumer Durable,2022-09-13,111652
+Kolkata,Consumer Durable,2022-02-28,44213
+Kolkata,4W,2022-04-21,41791
+Chennai,2W,2022-06-15,111073
