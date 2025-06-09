@@ -76,3 +76,34 @@ ENABLE NOVALIDATE;
 SELECT a.table_name, a.constraint_name, a.status, a.validated
 FROM user_constraints a
 WHERE a.constraint_type = 'R';
+
+CREATE MATERIALIZED VIEW mv_delinquency_metrics
+REFRESH COMPLETE
+START WITH SYSDATE
+NEXT SYSDATE + 1  -- Refresh daily
+AS
+SELECT
+    r.loan_id,
+    CASE
+        WHEN r.amount_paid < r.amount_due THEN TRUNC(SYSDATE) - r.due_date
+        ELSE 0
+    END AS dpd,
+    CASE
+        WHEN r.amount_paid < r.amount_due AND TRUNC(SYSDATE) - r.due_date BETWEEN 1 AND 30 THEN '30+'
+        WHEN r.amount_paid < r.amount_due AND TRUNC(SYSDATE) - r.due_date BETWEEN 31 AND 60 THEN '60+'
+        WHEN r.amount_paid < r.amount_due AND TRUNC(SYSDATE) - r.due_date BETWEEN 61 AND 90 THEN '90+'
+        WHEN r.amount_paid < r.amount_due AND TRUNC(SYSDATE) - r.due_date > 90 THEN '180+'
+        ELSE 'Current'
+    END AS bucket,
+    CASE
+        WHEN r.amount_paid < r.amount_due AND TRUNC(SYSDATE) - r.due_date > 90 THEN 'Y'
+        ELSE 'N'
+    END AS npa_flag
+FROM repayment_schedule r
+JOIN (
+    SELECT loan_id, MAX(due_date) AS last_due
+    FROM repayment_schedule
+    GROUP BY loan_id
+) last_due_info
+ON r.loan_id = last_due_info.loan_id AND r.due_date = last_due_info.last_due;
+
