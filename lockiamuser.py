@@ -3,11 +3,11 @@ from datetime import datetime, timedelta
 
 ### Configuration
 DAYS_THRESHOLD = 45
-TENANCY_OCID = "<your-tenancy-ocid>"
-TOPIC_OCID = "<your-notification-topic-ocid>"
+TENANCY_OCID = "<tenancy-ocid>"
+TOPIC_OCID = "<topic-ocid>
 
 # OCI Clients (use resource principal in OCI Functions or config locally)
-config = oci.config.from_file()
+config = oci.config.from_file(file_location='<config-file-location>', profile_name='DEFAULT')
 identity = oci.identity.IdentityClient(config)
 ons = oci.ons.NotificationDataPlaneClient(config)
 
@@ -23,11 +23,11 @@ for user in users:
 
     # Get detailed user info
     user_details = identity.get_user(user.id).data
-    last_login = user_details.time_last_successful_login
+    last_login = user_details.last_successful_login_time
 
     # Skip users with no login record
     if last_login is None:
-        continue
+        continue;
 
     days_inactive = (datetime.utcnow() - last_login.replace(tzinfo=None)).days
 
@@ -35,9 +35,8 @@ for user in users:
         actions = []
 
         # 1. Disable Console Login
-        identity.update_user(user.id, oci.identity.models.UpdateUserDetails(
-            is_login_allowed=False
-        ))
+
+        identity.update_user_capabilities(user.id, update_user_capabilities_details = oci.identity.models.UpdateUserCapabilitiesDetails(can_use_console_password=False))
         actions.append("🔒 Console access disabled")
 
         # 2. Revoke API Keys
@@ -73,7 +72,7 @@ else:
 # Send Notification
 ons.publish_message(
     topic_id=TOPIC_OCID,
-    publish_message_details=oci.ons.models.PublishMessageDetails(
+    message_details=oci.ons.models.MessageDetails(
         title="OCI IAM Compliance Report",
         body=body
     )
