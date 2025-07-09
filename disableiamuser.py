@@ -2,7 +2,7 @@ import oci
 from datetime import datetime, timedelta
 
 ### Configuration
-DAYS_THRESHOLD = 15
+DAYS_THRESHOLD = 45
 TENANCY_OCID = "<TENANCY_OCID>"
 TOPIC_OCID = "<TOPIC_OCID>"
 
