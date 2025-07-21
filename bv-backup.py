@@ -17,7 +17,7 @@ region = "ap-mumbai-1"
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 EMAIL_FROM = "<sender email>"
-EMAIL_PASSWORD = "Ashu@2410"  # App password if Gmail
+EMAIL_PASSWORD = "<password>"  # App password if Gmail
 EMAIL_TO = ["recipient_email_address]
 EMAIL_SUBJECT = "OCI Volumes Backup Report"
 
