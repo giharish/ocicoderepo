@@ -52,7 +52,7 @@ for compartment_id in compartment_ids:
                 "Backup ID": backup.id,
                 "Type": backup.type,
                 "Status": backup.lifecycle_state,
-                "Created Time": make_timezone_naive(backup.time_started),
+                "Created Time": make_timezone_naive(backup.time_created),
                 "Size (GB)": round(backup.size_in_gbs or 0, 2),
                 "Expiration Time": backup.expiration_time
             })
@@ -76,7 +76,7 @@ for compartment_id in compartment_ids:
                 "Backup ID": backup.id,
                 "Type": backup.type,
                 "Status": backup.lifecycle_state,
-                "Created Time": make_timezone_naive(backup.time_started),
+                "Created Time": make_timezone_naive(backup.time_created),
                 "Size (GB)": round(backup.size_in_gbs or 0, 2),
                 "Expiration Time": backup.expiration_time
             })
