@@ -62,7 +62,7 @@ for compartment_id in compartment_ids:
             "Backup ID": "ERROR",
             "Type": "-",
             "Status": str(e),
-            "Start Time": None,
+            "Created Time": None,
             "Size (GB)": "-",
             "Expiration Time": "-"
         })
@@ -86,7 +86,7 @@ for compartment_id in compartment_ids:
             "Backup ID": "ERROR",
             "Type": "-",
             "Status": str(e),
-            "Start Time": None,
+            "Created Time": None,
             "Size (GB)": "-",
             "Expiration Time": "-"
         })
