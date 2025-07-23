@@ -6,7 +6,7 @@ echo "Region,Compartment Name,Instance Name,Shape,Lifecycle State,Image Name" > 
 export PROFILE="CIFCLSV6"
 
 # Get all regions
-regions=ap-mumbai-1
+regions=<region-name>
 
 # Get all compartments
 #compartments=$(oci iam compartment list --all --compartment-id-in-subtree true --compartment-id $(oci iam compartment list --query "data[?contains(\"name\", 'root')].id" --raw-output --profile "$PROFILE") --query "data[?\"lifecycle-state\"=='ACTIVE'].{id:id,name:name}" --profile $PROFILE --output json)
