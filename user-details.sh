@@ -1,12 +1,12 @@
 #!/bin/bash
 
-TENANCY_OCID="ocid1.tenancy.oc1..aaaaaaaaczy2ya4mb6y6wc7hewnixcduhgplx43xx6vdv5qy3j3qjyagnbia"
+TENANCY_OCID="<tenancy-ocid>"
 OUTPUT_FILE="oci_users_with_groups.csv"
 
 echo "User OCID,User Name,Email,Group OCID,Group Name,Last Login,Status" > "$OUTPUT_FILE"
 
 # Get all users in the tenancy
-users=$(oci iam user list --compartment-id "$TENANCY_OCID" --all --query 'data[*].{id:id, name:name,email:email,lastlogin:"last-successful-login-time",status:"lifecycle-state"}' --profile=CIFCLSV6 --raw-output)
+users=$(oci iam user list --compartment-id "$TENANCY_OCID" --all --query 'data[*].{id:id, name:name,email:email,lastlogin:"last-successful-login-time",status:"lifecycle-state"}' --raw-output)
 
 # Loop over each user
 echo "$users" | jq -c '.[]' | while read user; do
@@ -17,7 +17,7 @@ echo "$users" | jq -c '.[]' | while read user; do
   user_status=$(echo "$user" | jq -r '.status')
 
   # Get groups for each user
-  groups=$(oci iam user list-groups --user-id "$user_id" --query 'data[*].{id:id, name:name}' --raw-output --profile=CIFCLSV6)
+  groups=$(oci iam user list-groups --user-id "$user_id" --query 'data[*].{id:id, name:name}' --raw-output)
 
   if [[ $(echo "$groups" | jq length) -eq 0 ]]; then
     echo "$user_id,$user_name,," >> "$OUTPUT_FILE"
