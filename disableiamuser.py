@@ -40,23 +40,23 @@ for user in users:
 
         # 1. Disable Console Login
 
-        identity.update_user_capabilities(user.id, update_user_capabilities_details = oci.identity.models.UpdateUserCapabilitiesDetails(can_use_console_password=False))
-        actions.append("🔒 Console access disabled")
-        actions.append(f"User OCID impacted is {user.id}")
+        #identity.update_user_capabilities(user.id, update_user_capabilities_details = oci.identity.models.UpdateUserCapabilitiesDetails(can_use_console_password=False))
+        #actions.append("🔒 Console access disabled")
+        #actions.append(f"User OCID impacted is {user.id}")
 
         # 2. Revoke API Keys
-        api_keys = identity.list_api_keys(user.id).data
-        for key in api_keys:
-            identity.delete_api_key(user.id, key.fingerprint)
-        if api_keys:
-            actions.append(f"🗝️ Revoked {len(api_keys)} API key(s)")
+        #api_keys = identity.list_api_keys(user.id).data
+        #for key in api_keys:
+        #    identity.delete_api_key(user.id, key.fingerprint)
+        #if api_keys:
+        #    actions.append(f"🗝️ Revoked {len(api_keys)} API key(s)")
 
         # 3. Revoke Auth Tokens
-        tokens = identity.list_auth_tokens(user.id).data
-        for token in tokens:
-            identity.delete_auth_token(user.id, token.id)
-        if tokens:
-            actions.append(f"📛 Revoked {len(tokens)} auth token(s)")
+        #tokens = identity.list_auth_tokens(user.id).data
+        #for token in tokens:
+        #    identity.delete_auth_token(user.id, token.id)
+        #if tokens:
+        #    actions.append(f"📛 Revoked {len(tokens)} auth token(s)")
 
         # Collect results
         disabled_users.append(
