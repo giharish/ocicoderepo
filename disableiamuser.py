@@ -26,7 +26,7 @@ for user in users:
     last_login = user_details.last_successful_login_time
     tag = identity.get_user(user.id).data.defined_tags
 
-    if 'trial' in tag and tag['trial'].get('App-Name') == 'ServiceUser':
+    if 'CIFCL' in tag and tag['CIFCL'].get('App-Name') == 'ServiceAccount':
         continue
 
     # Skip users with no login record
