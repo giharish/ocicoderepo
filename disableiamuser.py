@@ -2,12 +2,12 @@ import oci
 from datetime import datetime, timedelta
 
 ### Configuration
-DAYS_THRESHOLD = 45
-TENANCY_OCID = "<TENANCY_OCID>"
-TOPIC_OCID = "<TOPIC_OCID>"
+DAYS_THRESHOLD = 15
+TENANCY_OCID = "<tenancy_ocid>"
+TOPIC_OCID = "<topic ocid>"
 
 # OCI Clients (use resource principal in OCI Functions or config locally)
-config = oci.config.from_file(file_location='<Location of Config File>', profile_name='DEFAULT')
+config = oci.config.from_file(file_location='/Users/girishraja/.oci/config', profile_name='DEFAULT')
 identity = oci.identity.IdentityClient(config)
 ons = oci.ons.NotificationDataPlaneClient(config)
 
@@ -25,7 +25,7 @@ for user in users:
     user_details = identity.get_user(user.id).data
     last_login = user_details.last_successful_login_time
     tag = identity.get_user(user.id).data.defined_tags
-
+    # Ignore if the user has a specific tag
     if 'trial' in tag and tag['trial'].get('App-Name') == 'ServiceUser':
         continue
 
@@ -40,23 +40,9 @@ for user in users:
 
         # 1. Disable Console Login
 
-        identity.update_user_capabilities(user.id, update_user_capabilities_details = oci.identity.models.UpdateUserCapabilitiesDetails(can_use_console_password=False))
+        identity.update_user_capabilities(user.id, update_user_capabilities_details = oci.identity.models.UpdateUserCapabilitiesDetails(can_use_console_password=False,can_use_api_keys=False, can_use_auth_tokens=False, can_use_smtp_credentials=False, can_use_db_credentials=False, can_use_customer_secret_keys=False, can_use_o_auth2_client_credentials=False))
         actions.append("🔒 Console access disabled")
         actions.append(f"User OCID impacted is {user.id}")
-
-        # 2. Revoke API Keys
-        api_keys = identity.list_api_keys(user.id).data
-        for key in api_keys:
-            identity.delete_api_key(user.id, key.fingerprint)
-        if api_keys:
-            actions.append(f"🗝️ Revoked {len(api_keys)} API key(s)")
-
-        # 3. Revoke Auth Tokens
-        tokens = identity.list_auth_tokens(user.id).data
-        for token in tokens:
-            identity.delete_auth_token(user.id, token.id)
-        if tokens:
-            actions.append(f"📛 Revoked {len(tokens)} auth token(s)")
 
         # Collect results
         disabled_users.append(
