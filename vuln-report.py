@@ -2,7 +2,7 @@ import oci
 import csv
 
 # Config
-config = oci.config.from_file(file_location='/Users/girishraja/.oci/config', profile_name='DEFAULT')
+config = oci.config.from_file(file_location='/Users/girishraja/.oci/config', profile_name='CIFCLSV6')
 vss_client = oci.vulnerability_scanning.VulnerabilityScanningClient(config)
 compute_client = oci.core.ComputeClient(config)
 
@@ -25,4 +25,23 @@ for vuln in response.data:
         try:
             # Use instance_id instead of host_id
             instance = compute_client.get_instance(host.instance_id).data
-            instance_name =_
+            instance_name = instance.display_name
+        except Exception:
+            instance_name = "Unknown"
+
+        vulnerabilities.append({
+            "CVE": vuln.name,
+            "Severity": vuln.severity,
+            "InstanceID": host.instance_id,
+            "InstanceName": instance_name,
+            "CompartmentID": host.compartment_id
+        })
+
+# Write to CSV
+with open("oci_vulnerabilities.csv", "w", newline="") as csvfile:
+    fieldnames = ["CVE", "Severity", "InstanceID", "InstanceName", "CompartmentID"]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(vulnerabilities)
+
+print("✅ Export completed: oci_vulnerabilities.csv")
