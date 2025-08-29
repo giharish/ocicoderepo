@@ -2,7 +2,7 @@ import oci
 import csv
 
 # Config
-config = oci.config.from_file(file_location='/Users/girishraja/.oci/config', profile_name='CIFCLSV6')
+config = oci.config.from_file(file_location='~/.oci/config', profile_name='DEFAULT')
 vss_client = oci.vulnerability_scanning.VulnerabilityScanningClient(config)
 compute_client = oci.core.ComputeClient(config)
 
@@ -16,14 +16,14 @@ response = oci.pagination.list_call_get_all_results(
 )
 
 for vuln in response.data:
-    # Get impacted hosts
+    # Get impacted hosts (use .items)
     impacted_hosts = vss_client.list_host_vulnerability_impacted_hosts(
         host_vulnerability_id=vuln.id
     ).data
 
-    for host in impacted_hosts:
+    for host in impacted_hosts.items:   # <-- FIXED
         try:
-            # Use instance_id instead of host_id
+            # instance_id is the compute instance OCID
             instance = compute_client.get_instance(host.instance_id).data
             instance_name = instance.display_name
         except Exception:
